@@ -26,6 +26,12 @@ public class ProductController {
         return "products";
     }
 
+    @RequestMapping(value = "/abcd", method = RequestMethod.GET)
+    public String abcd(Model model){
+        System.out.println("Returning rpoducts:");
+        return "abcd";
+    }
+
     @RequestMapping("product/{id}")
     public String showProduct(@PathVariable Integer id, Model model){
         model.addAttribute("product", productService.getProductById(id));
